@@ -1,0 +1,10 @@
+.mat-dialog-content {
+  max-height: 100vh !important;
+  height: calc(100vh - 210px) !important;
+  margin: 0;
+  padding: 8px 24px;
+}
+
+.add-product {
+    margin-left: 5px;
+}

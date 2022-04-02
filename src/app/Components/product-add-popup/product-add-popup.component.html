@@ -1,0 +1,74 @@
+<ng-container>
+
+    <mat-toolbar class="header">
+        <span *ngIf="!product.productId">Add Product</span>
+        <span *ngIf="product.productId">Product#{{product.productId}}</span>
+    </mat-toolbar>
+
+    <ng-container *ngIf="!product">
+
+        <mat-dialog-content class="mat-typography">
+            <form class="form">
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Product Name</mat-label>
+                    <input matInput [formControl]="productNameControl" name="productName"
+                        [ngModel]="product.productName"
+                        (ngModelChange)="updateValue(updatedProduct,'productName',$event)"
+                        [ngModelOptions]="{standalone: true}" required>
+                </mat-form-field>
+
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Product Description</mat-label>
+                    <textarea matInput name="productDescription" [ngModel]="product.productDescription"
+                        (ngModelChange)="updateValue(updatedProduct,'productDescription',$event)"
+                        [ngModelOptions]="{standalone: true}"></textarea>
+                </mat-form-field>
+
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Product Price</mat-label>
+                    <input matInput type="number" min="0" name="productPrice" [ngModel]="product.productPrice"
+                        (ngModelChange)="updateValue(updatedProduct,'productPrice',$event)"
+                        [ngModelOptions]="{standalone: true}" required>
+                </mat-form-field>
+            </form>
+        </mat-dialog-content>
+
+    </ng-container>
+
+    <ng-container *ngIf="product">
+
+        <mat-dialog-content class="mat-typography">
+            <form class="form">
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Product Name</mat-label>
+                    <input matInput name="productName" [ngModel]="product.productName"
+                        (ngModelChange)="updateValue(updatedProduct,'productName',$event)"
+                        [ngModelOptions]="{standalone: true}">
+                </mat-form-field>
+
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Product Description</mat-label>
+                    <textarea matInput name="productDescription" [ngModel]="product.productDescription"
+                        (ngModelChange)="updateValue(updatedProduct,'productDescription',$event)"
+                        [ngModelOptions]="{standalone: true}"></textarea>
+                </mat-form-field>
+
+                <mat-form-field class="full-width" appearance="fill">
+                    <mat-label>Product Price</mat-label>
+                    <input matInput type="number" min="0" name="productPrice" [ngModel]="product.productPrice"
+                        (ngModelChange)="updateValue(updatedProduct,'productPrice',$event)"
+                        [ngModelOptions]="{standalone: true}">
+                </mat-form-field>
+            </form>
+        </mat-dialog-content>
+
+    </ng-container>
+
+    <mat-dialog-actions align="end">
+        <mat-toolbar class="footer">
+            <button mat-raised-button color="primary" [disabled]="!isValueModified" (click)="save()">Save</button>
+            <button mat-raised-button (click)="cancel()">Cancel</button>
+        </mat-toolbar>
+    </mat-dialog-actions>
+
+</ng-container>
