@@ -21,10 +21,12 @@ export class ProductAddPopupComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.product = this.data;
-    this.updatedProduct = this.product;
     this.isValueModified = false;
-    if (!this.product) {
+    this.product = this.data;
+    if (this.product) {
+      this.updatedProduct = JSON.parse(JSON.stringify(this.product));
+    }
+    if (this.product == undefined) {
       this.product = new Product();
       this.product.productName = "";
       this.product.productDescription = "";
@@ -38,6 +40,7 @@ export class ProductAddPopupComponent implements OnInit {
     this.isValueModified = true;
     record[key] = value === undefined ? null : value;
     this.updatedProduct = record;
+    console.log(this.product, this.updatedProduct);
   }
 
   cancel(): void {

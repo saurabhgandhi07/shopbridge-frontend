@@ -11,8 +11,7 @@
             <form class="form">
                 <mat-form-field class="full-width" appearance="fill">
                     <mat-label>Product Name</mat-label>
-                    <input matInput [formControl]="productNameControl" name="productName"
-                        [ngModel]="product.productName"
+                    <input matInput name="productName" [ngModel]="product.productName"
                         (ngModelChange)="updateValue(updatedProduct,'productName',$event)"
                         [ngModelOptions]="{standalone: true}" required>
                 </mat-form-field>
