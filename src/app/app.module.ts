@@ -19,11 +19,17 @@ import {MatInputModule} from '@angular/material/input';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { CustomerListComponent } from './Components/customer-list/customer-list.component';
+import { CustomerAddPopupComponent } from './Components/customer-add-popup/customer-add-popup.component';
+import { HomeComponent } from './Components/home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
     ProductListComponent,
-    ProductAddPopupComponent
+    ProductAddPopupComponent,
+    CustomerListComponent,
+    CustomerAddPopupComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
