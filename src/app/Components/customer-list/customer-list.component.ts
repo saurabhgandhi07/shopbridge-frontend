@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatTable } from '@angular/material/table';
+import { CustomerService } from 'src/app/Services/customer.service';
 
 @Component({
   selector: 'app-customer-list',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomerListComponent implements OnInit {
 
-  constructor() { }
+  public displayedColumns: string[] = ['editCustomer', 'customerName', 'customerEmail', 'customerAddress', 'customerDescription', 'deleteCustomer'];
+  public customers: any;
+  public customersCopy: any;
+  @ViewChild('customerTable') customerTable: MatTable<any>;
+
+  constructor(private customerService: CustomerService) { }
 
   ngOnInit(): void {
+    this.customerService.getCustomers().subscribe(
+      (response) => {
+        this.customers = response;
+      });
   }
 
 }

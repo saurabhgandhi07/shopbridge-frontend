@@ -8,13 +8,13 @@ import { ProductAddPopupComponent } from './Components/product-add-popup/product
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatSliderModule } from '@angular/material/slider';
-import {MatTableModule} from '@angular/material/table';
-import {MatButtonModule} from '@angular/material/button';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatIconModule} from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar'
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
@@ -38,7 +38,7 @@ import { HomeComponent } from './Components/home/home.component';
     FlexLayoutModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    
+
     MatTableModule,
     MatSliderModule,
     MatButtonModule,

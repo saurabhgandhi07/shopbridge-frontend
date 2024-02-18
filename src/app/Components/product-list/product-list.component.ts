@@ -11,8 +11,8 @@ import { ProductAddPopupComponent } from '../product-add-popup/product-add-popup
 })
 
 export class ProductListComponent implements OnInit {
+  
   public displayedColumns: string[] = ['editProduct', 'productName', 'productDescription', 'productPrice', 'deleteProduct'];
-
   public products: any;
   public ProductsCopy: any;
   @ViewChild('productTable') productTable: MatTable<any>;

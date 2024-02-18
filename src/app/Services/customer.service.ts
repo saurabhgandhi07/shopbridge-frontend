@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +6,9 @@ import { Injectable } from '@angular/core';
 })
 export class CustomerService {
 
-  constructor() { }
+  constructor(private _httpClient: HttpClient) { }
+
+  public getCustomers() {
+    return this._httpClient.get('https://624312b8d126926d0c5b61bd.mockapi.io/api/v1/customers?isActive=true');
+  }
 }

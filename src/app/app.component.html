@@ -1,9 +1,17 @@
 <mat-toolbar color="primary" class="header">
-    <span>#ShopBridge</span>
+        <span>#ShopBridge</span>
 </mat-toolbar>
-<span style="font-size: large; margin-left: 10px; margin-top: 10px;"><a routerLinkActive="active"
-        routerLink="/products">Products</a></span>
-<span style="font-size: large; margin-left: 10px; margin-top: 10px"> | </span>
-<span style="font-size: large; margin-left: 10px; margin-top: 10px;"><a routerLinkActive="active"
-        routerLink="/customers">Customers</a></span>
+<span style="font-size: large; margin-left: 10px; margin-top: 10px;">
+        <a routerLinkActive="active" routerLink="/products">
+                Products
+        </a>
+</span>
+<span style="font-size: large; margin-left: 10px; margin-top: 10px;">
+        |
+</span>
+<span style="font-size: large; margin-left: 10px; margin-top: 10px;">
+        <a routerLinkActive="active" routerLink="/customers">
+                Customers
+        </a>
+</span>
 <router-outlet></router-outlet>
